@@ -31,19 +31,145 @@
                         )
                     "
                 >
-                    <h3 class="text-xl font-semibold mb-2">Admin Overview</h3>
-                    <h3 class="text-lg font-semibold">Clients Count</h3>
-                    <p class="text-gray-600">{{ clientCount }}</p>
-                    <h3 class="text-lg font-semibold">Users Count</h3>
-                    <p class="text-gray-600">{{ userCount }}</p>
-                    <h3 class="text-lg font-semibold">Categories Count</h3>
-                    <p class="text-gray-600">{{ categoryCount }}</p>
-                    <h3 class="text-lg font-semibold">Products Count</h3>
-                    <p class="text-gray-600">{{ productCount }}</p>
-                    <h3 class="text-lg font-semibold">Sold Items Count</h3>
-                    <p class="text-gray-600">{{ soldItemCount }}</p>
-                    <h3 class="text-lg font-semibold">Sales Count</h3>
-                    <p class="text-gray-600">{{ saleCount }}</p>
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+                    >
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Admins
+                                </h2>
+                                <p class="text-gray-500">Total: {{ adminCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-gray-900 fas fa-user-secret"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Super Visor
+                                </h2>
+                                <p class="text-gray-500">Total: {{ superVisorCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-cyan-700 fas fa-user-nurse"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Cashiers
+                                </h2>
+                                <p class="text-gray-500">Total: {{ cashierCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-sky-900 fas fa-user-tag"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Clients
+                                </h2>
+                                <p class="text-gray-500">Total: {{ clientCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-blue-500 fas fa-user"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Users
+                                </h2>
+                                <p class="text-gray-500">Total: {{ userCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-green-500 fas fa-users"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Categories
+                                </h2>
+                                <p class="text-gray-500">Total: {{ categoryCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-violet-500 fas fa-list-ul"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Products
+                                </h2>
+                                <p class="text-gray-500">Total: {{ productCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-red-500 fas fa-box"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Sold Items
+                                </h2>
+                                <p class="text-gray-500">Total: {{ soldItemCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-red-900 fas fa-tag"
+                                ></i>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2 class="text-lg font-semibold">
+                                    Sales
+                                </h2>
+                                <p class="text-gray-500">Total: {{ saleCount }}</p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-yellow-300 fas fa-chart-line"
+                                ></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Add more content as needed -->
@@ -77,6 +203,9 @@ const prop = defineProps({
     productCount: Number,
     saleCount: Number,
     soldItemCount: Number,
+    cashierCount: Number,
+    adminCount: Number,
+    superVisorCount: Number,
     auth: Object,
 });
 </script>
