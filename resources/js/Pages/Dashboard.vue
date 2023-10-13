@@ -22,6 +22,17 @@
                 </p>
 
                 <!-- Display the count -->
+                <h2
+                    class="font-semibold text-2xl text-center mt-3 leading-tight"
+                    v-if="
+                        $page.props.auth.user.permissions &&
+                        $page.props.auth.user.permissions.includes(
+                            'manage-users'
+                        )
+                    "
+                >
+                    Admin over view
+                </h2>
                 <div
                     class="mt-4"
                     v-if="
@@ -38,10 +49,14 @@
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Admins
                                 </h2>
-                                <p class="text-gray-500">Total: {{ adminCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ adminCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
                                 <i
@@ -53,10 +68,14 @@
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Super Visor
                                 </h2>
-                                <p class="text-gray-500">Total: {{ superVisorCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ superVisorCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
                                 <i
@@ -64,29 +83,19 @@
                                 ></i>
                             </div>
                         </div>
+
                         <div
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
-                                    Cashiers
-                                </h2>
-                                <p class="text-gray-500">Total: {{ cashierCount }}</p>
-                            </div>
-                            <div class="ml-4">
-                                <i
-                                    class="text-3xl text-sky-900 fas fa-user-tag"
-                                ></i>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
-                        >
-                            <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Clients
                                 </h2>
-                                <p class="text-gray-500">Total: {{ clientCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ clientCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
                                 <i
@@ -98,10 +107,14 @@
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Users
                                 </h2>
-                                <p class="text-gray-500">Total: {{ userCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ userCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
                                 <i
@@ -113,10 +126,14 @@
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Categories
                                 </h2>
-                                <p class="text-gray-500">Total: {{ categoryCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ categoryCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
                                 <i
@@ -124,44 +141,121 @@
                                 ></i>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <h2
+                    class="font-semibold text-2xl text-center mt-5 leading-tight"
+                    v-if="
+                        $page.props.auth.user.permissions &&
+                        $page.props.auth.user.permissions.includes(
+                            'manage-cashiers'
+                        )
+                    "
+                >
+                    Super visor over view
+                </h2>
+                <div
+                    class="mt-4"
+                    v-if="
+                        $page.props.auth.user.permissions &&
+                        $page.props.auth.user.permissions.includes(
+                            'manage-cashiers'
+                        )
+                    "
+                >
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+                    >
                         <div
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
+                                    Cashiers
+                                </h2>
+                                <p class="text-gray-500">
+                                    Total: {{ cashierCount }}
+                                </p>
+                            </div>
+                            <div class="ml-4">
+                                <i
+                                    class="text-3xl text-sky-900 fas fa-user-tag"
+                                ></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2
+                    class="font-semibold text-2xl text-center mt-5 leading-tight"
+                    v-if="
+                        $page.props.auth.user.permissions &&
+                        $page.props.auth.user.permissions.includes(
+                            'manage-sales'
+                        )
+                    "
+                >
+                    Cashier over view
+                </h2>
+                <div
+                    class="mt-4"
+                    v-if="
+                        $page.props.auth.user.permissions &&
+                        $page.props.auth.user.permissions.includes(
+                            'manage-sales'
+                        )
+                    "
+                >
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+                    >
+                        <div
+                            class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
+                        >
+                            <div>
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Products
                                 </h2>
-                                <p class="text-gray-500">Total: {{ productCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ productCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
-                                <i
-                                    class="text-3xl text-red-500 fas fa-box"
-                                ></i>
+                                <i class="text-3xl text-red-500 fas fa-box"></i>
                             </div>
                         </div>
                         <div
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Sold Items
                                 </h2>
-                                <p class="text-gray-500">Total: {{ soldItemCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ soldItemCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
-                                <i
-                                    class="text-3xl text-red-900 fas fa-tag"
-                                ></i>
+                                <i class="text-3xl text-red-900 fas fa-tag"></i>
                             </div>
                         </div>
                         <div
                             class="bg-white rounded-lg shadow-lg p-4 flex items-center justify-between"
                         >
                             <div>
-                                <h2 class="text-lg font-semibold">
+                                <h2
+                                    class="text-lg dark:text-black font-semibold"
+                                >
                                     Sales
                                 </h2>
-                                <p class="text-gray-500">Total: {{ saleCount }}</p>
+                                <p class="text-gray-500">
+                                    Total: {{ saleCount }}
+                                </p>
                             </div>
                             <div class="ml-4">
                                 <i
@@ -176,7 +270,9 @@
 
                 <!-- Example: Recent Activity -->
                 <div class="mt-8">
-                    <h3 class="text-lg font-semibold">Recent Activity</h3>
+                    <h3 class="text-lg dark:text-white font-semibold">
+                        Recent Activity
+                    </h3>
                     <ul>
                         <li class="text-gray-600">
                             User A updated their profile.
