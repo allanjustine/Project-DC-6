@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Sales;
+use App\Models\Sale;
 use App\Models\SoldItem;
 use Illuminate\Database\Seeder;
 
@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductSeeder::class);
         $this->call(ClientSeeder::class);
 
-        Sales::factory(100)->create();
+        Sale::factory(100)->create();
         SoldItem::factory(300)->create();
     }
 }
